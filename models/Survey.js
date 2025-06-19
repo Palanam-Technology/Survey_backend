@@ -1,11 +1,11 @@
-// models/surveyModel.js
+//This is the model for the SurveyForm data
 const mongoose = require('mongoose');
-
 const surveySchema = new mongoose.Schema({
   fullName: String,
   gender: { type: String, enum: ['male', 'female'] },
   age: Number,
   address: String,
+  country: String,         
   state: String,
   hasChildren: String,
   childrenCount: Number,

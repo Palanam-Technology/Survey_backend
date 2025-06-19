@@ -2,24 +2,25 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const cors = require('cors');
-const userRoutes = require('./routes/userRoutes'); // Import your user routes
-const surveyRoutes = require('./routes/surveyRoutes');//import survey routes
-
-app.get('/', (_req, res) => {
-  res.sendStatus(200);
-});
+const userRoutes = require('./routes/userRoutes'); 
+const surveyRoutes = require('./routes/surveyRoutes');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-// Mount the userRoutes for handling signup and login
-app.use('/api/users', userRoutes); // This will now handle both /signup and /login
-app.use('/api/survey', surveyRoutes); // mount the survey routes
+//A check for backend deployment on Render
+app.get('/', (_req, res) => {
+  res.send('Backend is running!');
+});
 
 
-// MongoDB connection
+app.use('/api/users', userRoutes); // handles both /signup and /login
+app.use('/api/survey', surveyRoutes); //handles survey routes
+
+
+// for connecting with MongoDB,one can find URI in .env
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true

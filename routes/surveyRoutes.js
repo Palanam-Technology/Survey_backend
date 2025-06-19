@@ -1,7 +1,7 @@
 // routes/surveyRoutes.js
 const express = require('express');
 const router = express.Router();
-const Survey = require('../models/Survey'); // You'll create this model next
+const Survey = require('../models/Survey'); 
 
 router.post('/submit', async (req, res) => {
   try {

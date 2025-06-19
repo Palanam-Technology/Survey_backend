@@ -1,10 +1,10 @@
-const User = require('../models/User');  // Import User model
+//Logic for backend handling of LoginModal.js
+const User = require('../models/User');  
 
 const authenticateUser = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    // Find user by email (username in your frontend)
     const user = await User.findOne({ email });
 
     if (!user) {
@@ -17,7 +17,7 @@ const authenticateUser = async (req, res) => {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
 
-    // Respond with a dummy token (use a real JWT token here)
+    // Respond with a dummy token
     return res.status(200).json({ message: 'Login successful', token: 'your-token-here' });
   } catch (err) {
     console.error('Login error:', err);
