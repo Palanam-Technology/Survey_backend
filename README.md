@@ -1,4 +1,4 @@
-# 📦 Login_SurveyForm
+# 📦 Login+Survey Form
 
 This is the **backend** of a MERN (MongoDB, Express, React, Node.js) stack project that hosts a Login,SignUp and Survey Form modules. It provides a RESTful API to support functionalities such as user authentication, session handling, and survey data submission.
 
@@ -15,26 +15,19 @@ This is the **backend** of a MERN (MongoDB, Express, React, Node.js) stack proje
 
 ## 📁 Folder Structure
 ```bash
-backend/
-├── config/ # Database and email configurations
-│ └── db.js
-│ └── mailer.js
+Survey_backend/
 ├── controllers/ # Logic for handling routes
-│ └── authController.js
-│ └── surveyController.js
+│ └── authController.js #Handles the logic for LoginModal.js of frontend
 ├── models/ # Mongoose schemas
 │ └── User.js
 │ └── Survey.js
 ├── routes/ # Route definitions
-│ └── authRoutes.js
+│ └── userRoutes.js
 │ └── surveyRoutes.js
-├── middleware/ # Auth middleware
-│ └── authMiddleware.js
-├── utils/ # Helper functions (token generator, etc.)
-│ └── generateToken.js
 ├── .env
 ├── server.js # Entry point
 └── package.json
+└── package-lock.json
 ---
 ```
 ---
